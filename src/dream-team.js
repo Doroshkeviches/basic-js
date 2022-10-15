@@ -19,5 +19,6 @@ function createDreamTeam(/* members */) {
 }
 
 module.exports = {
+module.exports = {
   createDreamTeam
 };
