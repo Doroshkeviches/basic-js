@@ -13,7 +13,8 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 
- class DepthCalculator {
+
+class DepthCalculator {
   calculateDepth(arr) {
         let asd = 1;
         for (let i = 0; i < arr.length; i++) {
@@ -22,6 +23,7 @@ const { NotImplementedError } = require('../extensions/index.js');
             qwe = qwe + this.calculateDepth(arr[i]);
           }
           if (qwe > asd) {
+            console.log(asd)
             asd = qwe;
           }
         }

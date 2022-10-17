@@ -30,17 +30,22 @@ const { NotImplementedError } = require('../extensions/index.js');
   }
   for(let j = 0; j < matrix.length; j++) {
     for(let n = 0; n < matrix[j].length; n++){
-      arr[j][n] = test(matrix, j-1, n-1) + test(matrix, j, n-1) + test(matrix, j+1, n-1)
-                + test(matrix, j-1, n)                       + test(matrix, j+1, n)
-                + test(matrix, j-1, n+1) + test(matrix, j, n+1) + test(matrix, j+1, n+1)
+      arr[j][n] = around(matrix, j-1, n-1) +   around(matrix, j, n-1) + around(matrix, j+1, n-1)
+                  + around(matrix, j-1, n)                            +   around(matrix, j+1, n)         
+                  + around(matrix, j-1, n+1) + around(matrix, j, n+1) + around(matrix, j+1, n+1)
     }
   }
   return arr
 }
 
-function test(qwe, j, n) {
-  if(j < 0 || n < 0 || j > qwe.length - 1 || n > qwe[j].length - 1) return 0
-  return qwe[j][n] ? 1 : 0
+
+function around(qwe, j, n) {
+  if(j < 0 || n < 0 || j > qwe.length - 1 ) return 0
+
+   if (qwe[j][n]){
+    return 1
+  }
+  else{return 0} 
 }
 
 module.exports = {

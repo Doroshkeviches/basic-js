@@ -18,12 +18,12 @@ const { NotImplementedError } = require('../extensions/index.js');
   let arr = n.split('-')
   if(arr.length != 6) return false
   for(let i = 0; i < arr.length; i++) {
-    if(!is16dig(arr[i])) return false
+    if(!dig(arr[i])) return false
   }
   return true
 }
 
-function is16dig(dig){
+function dig(dig){
   if(dig == '00') return true
   let num = parseInt(dig, 16)
   if(!num) return false

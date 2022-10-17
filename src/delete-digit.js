@@ -16,9 +16,9 @@ const { NotImplementedError } = require('../extensions/index.js');
   let arr = [];
   for (let i = 0; i < num.length; i++) {
     let str = '';
-    for (let j = 0; j < num.length; j++) {
-      if (j !== i)
-      str = str + num[j];
+    for (let k = 0; k < num.length; k++) {
+      if (k !== i)
+      str = str + num[k];
     }
     arr[i] = +str;
   }

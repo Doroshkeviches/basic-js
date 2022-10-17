@@ -22,48 +22,9 @@ const { NotImplementedError } = require('../extensions/index.js');
  * }
  *
  */
- function getDNSStats(domains) {
-  /* throw new NotImplementedError('Not implemented'); */
+ function getDNSStats(/* domains */) {
+  throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here
-  let obj = {};
-  for (let i = 0; i < domains.length; i++) {
-    domains[i] = domains[i].split('.');
-  }
-
-  for (let i = 0; i < domains.length; i++) {
-    for (let j = 0; j < domains[i].length; j++) {
-      domains[i][j] = '.' + domains[i][j]
-    }
-  }
-
-  for (let i = 0; i < domains.length; i++) {
-    for (let j = 1; j < domains[i].length; j++) {
-      domains[i][domains[i].length -1 - j] = domains[i][domains[i].length - j] + domains[i][domains[i].length -1 - j];
-    }
-    
-  }
- 
-  let d = [];
-  for (let i = 0; i < domains.length; i++) {
-    for (let j = 0; j < domains[i].length; j++) {
-      if (!d.includes(domains[i][j])) {
-        d.push(domains[i][j])
-      }
-    }
-  }
-
-  for (let i = 0; i < d.length; i++) {
-    let count = 0;
-    for (let j = 0; j < domains.length; j++) {
-      /* for (let k = 0; k < domains[j].length; k++) {
-      } */
-      if (domains[j].includes(d[i])) {
-        count++;
-      }
-    }
-    obj[d[i]] = count
-  }
-  return obj
 }
 
 module.exports = {
